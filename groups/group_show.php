@@ -41,3 +41,11 @@
         </div>
     <?php endforeach; ?>
 </div>
+
+<div>
+    <form action="/groups/create_post.php" method="post">
+        <textarea name="content"></textarea>
+        <input type="hidden" name="group_id" value="<?php echo($group_id) ?>"></input>
+        <input type="submit" value="Създай"></input>
+    </form>
+</div>
