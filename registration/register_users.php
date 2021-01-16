@@ -1,5 +1,5 @@
 <?php 
-    include('../common.php');
+    include('../helpers.php');
 
     function createProfile($email, $password, $name, $faculty, $subject, $administrative_group, $year_graduated){
         $conn = new_db_connection();

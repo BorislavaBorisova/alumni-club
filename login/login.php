@@ -1,5 +1,5 @@
 <?php 
-    include('../common.php');
+    include('../helpers.php');
 
     session_start();
     if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true){
