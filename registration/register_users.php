@@ -1,6 +1,8 @@
 <?php 
+    include('../common.php');
+
     function createProfile($email, $password, $name, $faculty, $subject, $administrative_group, $year_graduated){
-        $conn = new PDO('mysql:host=localhost;dbname=alumni_db;charset=utf8', 'borislava', 'bori');
+        $conn = new_db_connection();
         $hash = password_hash($password, PASSWORD_DEFAULT);
         //add default picture
         $stmt = $conn->prepare("INSERT INTO users (email, password, name, security_level, faculty, subject, administrative_group, year_graduated)

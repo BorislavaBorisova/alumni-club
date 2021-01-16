@@ -1,4 +1,6 @@
 <?php 
+    include('../common.php');
+
     session_start();
     if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true){
         header( 'Location: http://localhost/alumni/user_profile.php' );
@@ -6,7 +8,7 @@
     }
     //check if it is json
     $data = json_decode(file_get_contents('php://input'), true);
-    $conn = new PDO('mysql:host=localhost;dbname=alumni_db;charset=utf8', 'borislava', 'bori');
+    $conn = new_db_connection();
     $sql = "SELECT id, email, password, security_level FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$data['email']]);
