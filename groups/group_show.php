@@ -17,7 +17,17 @@
 
 <link rel="stylesheet" href="styles.css">
 
-<h1><?php printf("Група за алумни, завършили %s през %s", $group['faculty'], $group['year']); ?></h2>
+<h1>
+    <?php 
+        if(isset($group['year'])) {
+            printf("Група за алумни, завършили %s през %s", $group['faculty'], $group['year']);
+        }
+        else {
+            printf("Група за алумни, завършили %s", $group['faculty']);
+        }
+
+    ?>
+</h2>
 
 <div>
     <?php foreach($posts as $post): ?>

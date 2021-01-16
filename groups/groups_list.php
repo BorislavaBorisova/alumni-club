@@ -8,11 +8,28 @@
 
 <h1>Групи</h1>
 
+<form action="/groups/create.php" method="post">
+    <input type="hidden" name="type" value="year"/>
+    <input type="submit" value="Създай група за твоя випуск" />
+</form>
+
+<form action="/groups/create.php" method="post">
+    <input type="hidden" name="type" value="faculty"/>
+    <input type="submit" value="Създай група за твоя факултет" />
+</form>
+
 <div id="groups">
     <?php foreach($groups as $group): ?>
         <ul>
             <li class="group">
-                <?php printf("<a href='/groups?id=%s'>%s - %s година</a>", $group['id'], $group['faculty'], $group['year']); ?>
+                <?php 
+                    if(isset($group['year'])) {
+                        printf("<a href='/groups?id=%s'>%s - %s година</a>", $group['id'], $group['faculty'], $group['year']);
+                    }
+                    else {
+                        printf("<a href='/groups?id=%s'>%s</a>", $group['id'], $group['faculty']);
+                    }
+                ?>
             </li>
         </ul>
     <?php endforeach; ?>
