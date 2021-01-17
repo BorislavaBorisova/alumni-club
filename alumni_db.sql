@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2021 at 12:24 PM
+-- Generation Time: Jan 17, 2021 at 01:02 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -114,7 +114,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `email`, `password`, `name`, `security_level`, `place`, `faculty`, `subject`, `administrative_group`, `year_graduated`, `picture`) VALUES
 (23, 'bori.plamenowa@gmail.com', '$2y$10$IxYU/iSP77f3cO4DVc7oW.1J500/a04fJtu6wSVUb9DjuHZIC4HJK', 'Боряна Пламенова Борисова', 'user', NULL, 'Факултет по математика и информатика', 'Компютърни науки', 1, 2021, NULL),
-(24, 'iliyan982@gmail.com', '$2y$10$4XdLBPLl8y2iTPfYzlho5ODwAciPzQj.UE4K.TcXnC/goBL682ixq', 'Илия Драгомиров Драганов', 'user', NULL, 'Факултет по математика и информатика', 'Компютърни науки', 1, 2021, NULL),
+(24, 'iliyan982@gmail.com', '$2y$10$4XdLBPLl8y2iTPfYzlho5ODwAciPzQj.UE4K.TcXnC/goBL682ixq', 'Илия Драгомиров Драганов', 'user', NULL, 'Факултет по математика и информатика', 'Компютърни науки', 1, 2020, NULL),
 (25, 'n.m.danailov@gmail.com', '$2y$10$GQDoGUAap/8uAL5.zOJFversIjHw.EVH0BsHaauxTRr9p3ALhTl12', 'Николай Мартинов Данаилов', 'user', NULL, 'Факултет по математика и информатика', 'Компютърни науки', 1, 2021, NULL);
 
 --
@@ -159,7 +159,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `posts`

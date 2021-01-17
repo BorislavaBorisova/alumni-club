@@ -36,7 +36,9 @@
         }
 
     ?>
-</h2>
+</h1>
+
+<a href="<?php echo("/groups/users?id=" . $group_id);?>">Виж кой е в тази група</a>
 
 <div class="posts">
     <h3>Постове</h3>

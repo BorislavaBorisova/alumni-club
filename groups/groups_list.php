@@ -8,12 +8,12 @@
 
 <h1>Групи</h1>
 
-<form action="/groups/create.php" method="post">
+<form action="/groups/create_group.php" method="post">
     <input type="hidden" name="type" value="year"/>
     <input type="submit" value="Създай група за твоя випуск" />
 </form>
 
-<form action="/groups/create.php" method="post">
+<form action="/groups/create_group.php" method="post">
     <input type="hidden" name="type" value="faculty"/>
     <input type="submit" value="Създай група за твоя факултет" />
 </form>
