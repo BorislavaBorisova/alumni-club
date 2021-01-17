@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2021 at 03:29 PM
+-- Generation Time: Jan 17, 2021 at 11:49 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -30,15 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `groups` (
   `id` int(11) NOT NULL,
   `year` varchar(32) DEFAULT NULL,
-  `faculty` varchar(128) NOT NULL
+  `faculty` varchar(128) NOT NULL,
+  `admin_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `groups`
 --
 
-INSERT INTO `groups` (`id`, `year`, `faculty`) VALUES
-(2, '2017', 'Факултет по математика и информатика');
+INSERT INTO `groups` (`id`, `year`, `faculty`, `admin_id`) VALUES
+(2, '2017', 'Факултет по математика и информатика', 25),
+(42, '2021', 'Факултет по математика и информатика', 23),
+(43, NULL, 'Факултет по математика и информатика', 23);
 
 -- --------------------------------------------------------
 
@@ -119,13 +122,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`
