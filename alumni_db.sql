@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2021 at 11:49 AM
+-- Generation Time: Jan 17, 2021 at 12:24 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `alumni_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  `title` varchar(128) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `description` text NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `group_id`, `title`, `datetime`, `description`, `user_id`) VALUES
+(1, 2, 'Test event', '2021-01-18 15:00:00', 'This is a test event!', 25),
+(2, 2, 'Да се напием!', '2021-01-17 22:00:00', 'Аре да пием колеги, минаха 4 години, но все още съм алкохолик, хаха.', 25),
+(6, 42, '124214214', '2021-01-06 13:23:00', '124124', 23);
 
 -- --------------------------------------------------------
 
@@ -61,7 +85,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `group_id`, `content`, `user_id`) VALUES
-(1, 2, 'Здравейте, колеги! Какво правите в днешно време? Искате ли да се срещнем за по едно кафе някой път?', 23);
+(1, 2, 'Здравейте, колеги! Какво правите в днешно време? Искате ли да се срещнем за по едно кафе някой път?', 23),
+(21, 42, 'qwrwqr', 23);
 
 -- --------------------------------------------------------
 
@@ -97,6 +122,12 @@ INSERT INTO `users` (`id`, `email`, `password`, `name`, `security_level`, `place
 --
 
 --
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `groups`
 --
 ALTER TABLE `groups`
@@ -119,6 +150,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
@@ -128,7 +165,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`

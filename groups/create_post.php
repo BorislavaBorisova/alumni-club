@@ -1,7 +1,6 @@
 <?php
     include("../helpers.php");
 
-    print_r($_POST);
     $group_id = $_POST['group_id'];
     $content = $_POST['content'];
 
