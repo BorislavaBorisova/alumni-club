@@ -4,19 +4,23 @@
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $groups = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
+    $user = get_user();
 ?>
 
 <h1>Групи</h1>
 
 <form action="/groups/create_group.php" method="post">
     <input type="hidden" name="type" value="year"/>
-    <input type="submit" value="Създай група за твоя випуск" />
+    <input type="submit" value="Създай група за твоя випуск - <?php echo($user['year_graduated']); ?>" />
 </form>
 
 <form action="/groups/create_group.php" method="post">
     <input type="hidden" name="type" value="faculty"/>
-    <input type="submit" value="Създай група за твоя факултет" />
+    <input type="submit" value="Създай група за твоя факултет - <?php echo($user['faculty']); ?>" />
 </form>
+
+<?php include("../templates/errors.php"); ?>
 
 <div id="groups">
     <?php foreach($groups as $group): ?>

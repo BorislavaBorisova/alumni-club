@@ -33,4 +33,21 @@
         $_SESSION['id'] = $id;
         $_SESSION['email'] = $user['email'];
     }
+
+    function set_errors($errors) {
+        safe_session_start();
+        $_SESSION['errors'] = $errors;
+    }
+
+    function has_errors() {
+        safe_session_start();
+        return isset($_SESSION['errors']);
+    }
+
+    function pop_errors() {
+        safe_session_start();
+        $errors = $_SESSION['errors'];
+        $_SESSION['errors'] = null;
+        return $errors;
+    }
 ?>

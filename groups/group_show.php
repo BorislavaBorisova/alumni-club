@@ -40,6 +40,8 @@
 
 <a href="<?php echo("/groups/users?id=" . $group_id);?>">Виж кой е в тази група</a>
 
+<?php include("../templates/errors.php"); ?>
+
 <div class="posts">
     <h3>Постове</h3>
     <?php foreach($posts as $post): ?>

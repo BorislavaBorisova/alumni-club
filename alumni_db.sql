@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2021 at 01:02 PM
+-- Generation Time: Jan 17, 2021 at 02:22 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -64,8 +64,8 @@ CREATE TABLE `groups` (
 
 INSERT INTO `groups` (`id`, `year`, `faculty`, `admin_id`) VALUES
 (2, '2017', 'Факултет по математика и информатика', 25),
-(42, '2021', 'Факултет по математика и информатика', 23),
-(43, NULL, 'Факултет по математика и информатика', 23);
+(43, NULL, 'Факултет по математика и информатика', 23),
+(66, '2021', 'Факултет по математика и информатика', 23);
 
 -- --------------------------------------------------------
 
@@ -85,8 +85,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `group_id`, `content`, `user_id`) VALUES
-(1, 2, 'Здравейте, колеги! Какво правите в днешно време? Искате ли да се срещнем за по едно кафе някой път?', 23),
-(21, 42, 'qwrwqr', 23);
+(21, 42, 'qwrwqr', 23),
+(25, 2, 'qwewqe', 25),
+(27, 66, '12424', 23);
 
 -- --------------------------------------------------------
 
@@ -159,13 +160,13 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `users`
