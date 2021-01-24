@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true){
-        header( 'Location: /user_profile.php' );
+        header( 'Location: /alumni/user_profile.php' );
         exit;
     }
 
