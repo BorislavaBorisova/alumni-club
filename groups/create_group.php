@@ -14,14 +14,14 @@
                 $stmt->execute([$user['year_graduated'], $user['faculty']]);
                 break;
             default:
-                set_errors(Array("Server error: Unknown group creation type"));
+                set_errors(Array("Сървърна грешка: Неизвестен тип на създаване на група"));
                 return true;
         }
 
         $group = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if($group) {
-            set_errors(Array("Group already exists"));
+            set_errors(Array("Групата вече съществува"));
             return true;
         }
 

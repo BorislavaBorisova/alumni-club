@@ -125,3 +125,5 @@
         </form>
     </div>
 </div>
+
+<div class="float-clear"></div>

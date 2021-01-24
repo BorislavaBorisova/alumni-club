@@ -6,16 +6,14 @@
     }
 ?>
 
-<ul class="errors-area">
-    <?php if($has_errors): ?>
-        <h3>Errors</h3>
+<?php if($has_errors): ?>
+    <ul class="errors-area">
+        <h3>Грешки</h3>
 
         <?php foreach($errors as $error): ?>
             <li class="error">
                 <?php echo($error) ?>
             </li>
         <?php endforeach; ?>
-
-        <hr/>
-    <?php endif; ?>
-</ul>
+    </ul>
+<?php endif; ?>

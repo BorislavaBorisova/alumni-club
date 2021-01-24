@@ -1,6 +1,13 @@
+body {
+  background-color: #ffdc9e;
+}
+
 #container {
   width: 80%;
-  margin: 0 auto;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 h1,
@@ -25,4 +32,19 @@ h3 {
 
 #navigation a:hover {
   background-color: darkgray;
+}
+
+.errors-area {
+  background-color: red;
+  border-radius: 10px;
+  padding: 10px 30px;
+  color: white;
+}
+
+.errors-area h3 {
+  margin: 0;
+}
+
+.float-clear {
+  clear: both;
 }
