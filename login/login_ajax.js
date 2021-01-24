@@ -1,5 +1,6 @@
-function successfulLogIn(){
+function successfulLogIn(event){
     // promeni zashtoto e login
+    event.preventDefault();
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     $.ajax({

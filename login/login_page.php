@@ -4,8 +4,6 @@
         header( 'Location: /alumni/user_profile.php' );
         exit;
     }
-
-    include('../templates/top.php');
 ?>
 
 <!--         
@@ -18,37 +16,16 @@
 
 <link rel="stylesheet" href="login_style.css">
 <script type="text/javascript" defer src="login_ajax.js"></script>
-
-<div class="login-wrap">
-    <div class="login-html">
-        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Вход в Клуба</label>
-        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
-        <div class="login-form">
-            <div class="sign-in-htm">
-                <form onsubmit="return successfulLogIn()" method="post">
-                    <div class="group">
-                        <label for="user" class="label">Имейл</label>
-                        <input type="text" id="email" name="email" class="input">
-                    </div>
-                    <div class="group">
-                        <label for="pass" class="label">Парола</label>
-                        <input type="password" class="input" data-type="password" id="password" name="password">
-                    </div>
-                    <div class="group">
-                        <!-- <input type="submit" class="button" value="Log In"> -->
-                        <button type="submit" class="button">Вход</button>
-                        <div id="error_message"></div>
-                    </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <a href="#forgot">Забравена парола</a>
-                    </div>
-                </form>
-            </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<div id="picture">
+    <form method="post" onsubmit="return successfulLogIn(event)"> 
+        <div class="box">
+            <h1>Вход в клуба</h1>
+            <input type="email" name="email" class="email" id="email" placeholder="Имейл"/>
+            <input type="password" name="password" class="password" id="password" placeholder="Парола"/>   
+            <input type="submit" class="button" value="Вход"/>
+            <p><a href="">Забравена парола</a></p> 
+            <div id="error_message"></div>
         </div>
-    </div>
+    </form>
 </div>
-
-<?php
-    include('../templates/bottom.php');
-?>
