@@ -3,7 +3,7 @@
 
     session_start();
     if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true){
-        header( 'Location: http://localhost/alumni/user_profile.php' );
+        header( 'Location: http://localhost/alumni/user/profile.php' );
         exit;
     }
     //check if it is json

@@ -10,7 +10,7 @@
     <body>
         <div id="navigation">
             <a href="/groups">Групи</a>
-            <a href="/user_profile.php">Профил</a>
+            <a href="/user/profile.php">Профил</a>
             <a href="/login/login_page.php">Влизане</a>
         </div>
         <div id='container'>

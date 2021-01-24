@@ -13,7 +13,7 @@ function successfulLogIn(){
                             document.getElementById("error_message").innerHTML = response.error_message;
                             return false;
                         } else {
-                            window.location.href = "http://localhost/alumni/user_profile.php";
+                            window.location.href = "http://localhost/alumni/user/profile.php";
                             return true;
                         }
                     }
