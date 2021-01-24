@@ -1,0 +1,77 @@
+.post .content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#create-post .content {
+  width: 80%;
+  height: 40px;
+}
+
+.post,
+.event {
+  background-color: lightgray;
+  border-radius: 5px;
+  margin: 5px auto;
+  padding: 5px;
+}
+
+.event .title {
+  text-align: center;
+}
+
+#create-post .submit {
+  width: 15%;
+  height: 46px;
+  top: -18px;
+  position: relative;
+}
+
+.submit {
+  background-color: lightgray;
+}
+
+.submit:hover {
+  background-color: darkgray;
+}
+
+#posts {
+  float: left;
+  width: 50%;
+}
+
+#events-right {
+  float: right;
+  width: 33%;
+}
+
+#posts,
+#events,
+#create-event {
+  border: 2px solid black;
+  padding: 25px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#group-users-link {
+  text-align: center;
+  display: block;
+}
+
+#create-event input {
+  width: 50%;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+#create-event label {
+  width: 40%;
+  display: inline-block;
+}
+
+#create-event .submit {
+  height: 40px;
+  margin: 0 auto;
+  display: block;
+}
