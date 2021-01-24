@@ -38,12 +38,12 @@
     ?>
 </h1>
 
-<a href="<?php echo("/groups/users?id=" . $group_id);?>">Виж кой е в тази група</a>
+<a id="group-users-link" href="<?php echo("/groups/users?id=" . $group_id);?>">Виж кой е в тази група</a>
 
 <?php include("../templates/errors.php"); ?>
 
-<div class="posts">
-    <h3>Постове</h3>
+<div id="posts">
+    <h2>Постове</h2>
     <?php foreach($posts as $post): ?>
         <div class='post'>
             <div class='user'>
@@ -65,63 +65,63 @@
     <?php endforeach; ?>
 
     <div>
-        <form action="/groups/create_post.php" method="post">
-            <textarea name="content"></textarea>
+        <form action="/groups/create_post.php" method="post" id="create-post">
+            <textarea name="content" class="content"></textarea>
             <input type="hidden" name="group_id" value="<?php echo($group_id) ?>"></input>
-            <input type="submit" value="Създай"></input>
+            <input type="submit" value="Създай" class="submit"></input>
         </form>
     </div>
 </div>
 
-<hr/>
-
-<div class="event">
-    <h3>Събития</h3>
-    <?php foreach($events as $event): ?>
-        <div class='event'>
-            <div class='user'>
-                <?php printf("Създадено от <i>%s</i>", $event['user_email']); ?>
-            </div>
-            <div class='content'>
-                <b><?php echo($event['title']); ?></b>
-            </div>
-            <div class='description'>
-                <blockquote><?php echo($event['description']); ?></blockquote>
-            </div>
-            <div class='datetime'>
-                Кога: <?php echo($event['datetime']); ?>
-            </div>
-
-            <?php if($group['admin_id'] == $user['id'] || $event['user_id'] == $user['id']): ?>
-                <div class='admin-controls'>
-                    <form action="/groups/delete_event.php" method="post">
-                        <input type="hidden" name="event_id" value="<?php echo($event['id']); ?>"/>
-                        <input type="hidden" name="group_id" value="<?php echo($group['id']); ?>"/>
-                        <input type="submit" value="Изтрий" />
-                    </form>
+<div id="events-right">
+    <div id="events">
+        <h2>Събития</h2>
+        <?php foreach($events as $event): ?>
+            <div class='event'>
+                <div class='user'>
+                    <?php printf("Създадено от <i>%s</i>", $event['user_email']); ?>
                 </div>
-            <?php endif ?>
-        </div>
-    <?php endforeach; ?>
-</div>
+                <div class='title'>
+                    <b><?php echo($event['title']); ?></b>
+                </div>
+                <div class='description'>
+                    <blockquote><?php echo($event['description']); ?></blockquote>
+                </div>
+                <div class='datetime'>
+                    Кога: <?php echo($event['datetime']); ?>
+                </div>
 
-<div>
-    <h3>Създай събитие</h3>
-    <form action="/groups/create_event.php" method="post">
-        <input type="hidden" name="group_id" value="<?php echo($group_id) ?>"></input>
-        <input type="hidden" name="user_id" value="<?php echo($user['id']) ?>"></input>
-        <div>
-            <label>Заглавие</label>
-            <input type="text" name="title"></input>
-        </div>
-        <div>
-            <label>Време</label>
-            <input type="datetime-local" name="datetime"></input>
-        </div>
-        <div>
-            <label>Описание</label>
-            <textarea name="description"></textarea>
-        </div>
-        <input type="submit" value="Създай"></input>
-    </form>
+                <?php if($group['admin_id'] == $user['id'] || $event['user_id'] == $user['id']): ?>
+                    <div class='admin-controls'>
+                        <form action="/groups/delete_event.php" method="post">
+                            <input type="hidden" name="event_id" value="<?php echo($event['id']); ?>"/>
+                            <input type="hidden" name="group_id" value="<?php echo($group['id']); ?>"/>
+                            <input type="submit" value="Изтрий" />
+                        </form>
+                    </div>
+                <?php endif ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <div id="create-event">
+        <h3>Създай събитие</h3>
+        <form action="/groups/create_event.php" method="post">
+            <input type="hidden" name="group_id" value="<?php echo($group_id) ?>"></input>
+            <input type="hidden" name="user_id" value="<?php echo($user['id']) ?>"></input>
+            <div>
+                <label>Заглавие</label>
+                <input type="text" name="title"></input>
+            </div>
+            <div>
+                <label>Време</label>
+                <input type="datetime-local" name="datetime"></input>
+            </div>
+            <div>
+                <label>Описание</label>
+                <textarea name="description"></textarea>
+            </div>
+            <input class="submit" type="submit" value="Създай"></input>
+        </form>
+    </div>
 </div>

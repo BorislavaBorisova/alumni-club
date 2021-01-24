@@ -1,0 +1,14 @@
+.create-group {
+  display: inline;
+}
+
+.create-group .submit {
+  width: 48%;
+  display: inline-block;
+  height: 40px;
+  background-color: lightgray;
+}
+
+.create-group .submit:hover {
+  background-color: darkgray;
+}

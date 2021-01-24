@@ -8,16 +8,18 @@
     $user = get_user();
 ?>
 
+<link rel="stylesheet" href="/groups/group_list_styles.css">
+
 <h1>Групи</h1>
 
-<form action="/groups/create_group.php" method="post">
+<form class="create-group" action="/groups/create_group.php" method="post">
     <input type="hidden" name="type" value="year"/>
-    <input type="submit" value="Създай група за твоя випуск - <?php echo($user['year_graduated']); ?>" />
+    <input class="submit" type="submit" value="Създай група за твоя випуск" />
 </form>
 
-<form action="/groups/create_group.php" method="post">
+<form class="create-group" action="/groups/create_group.php" method="post">
     <input type="hidden" name="type" value="faculty"/>
-    <input type="submit" value="Създай група за твоя факултет - <?php echo($user['faculty']); ?>" />
+    <input class="submit" type="submit" value="Създай група за твоя факултет" />
 </form>
 
 <?php include("../templates/errors.php"); ?>
