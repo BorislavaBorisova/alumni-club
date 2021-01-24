@@ -17,7 +17,8 @@
     if(password_verify($data['password'], $row['password']) == true){                                      
         $_SESSION['logged'] = true;
         $_SESSION['id'] = $row['id'];
-        $_SESSION['email'] = $row['email'];                            
+        $_SESSION['email'] = $row['email'];  
+        $_SESSION['security_level'] = $row['security_level'];                            
         $success = true;
         echo json_encode(array("success"=>$success));
     } else {
