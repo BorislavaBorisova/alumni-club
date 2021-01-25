@@ -1,4 +1,12 @@
 <?php 
+    session_start();
+    if(!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true){
+        header( 'Location: /alumni/login/login_page.php' );
+        exit;
+    }
+
+    include('../templates/top.php');
+
     include('../helpers.php');
 
     $conn = new_db_connection();

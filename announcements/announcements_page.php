@@ -1,9 +1,14 @@
-<link rel="stylesheet" href="announcements_style.css">
 <?php 
-    include("../templates/top.php");
-?>
+    session_start();
+    if(!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true){
+        header( 'Location: /alumni/login/login_page.php' );
+        exit;
+    }
 
-<div class="container">
+    include('../templates/top.php');
+?>
+<link rel="stylesheet" href="announcements_style.css">
+<div class="big_box">
     <div class="box">
         <form method="post" action="add_announcement.php" id="announcement_form"> 
             <h2 id="form_title">Добави обява</h2>
