@@ -25,12 +25,12 @@ $email = $_POST["email"];
 $place = $_POST["place"];
 
 if (isset($password) && $password !== "") {
-    if (!password_verify($data['password'], $row['password'])) {
+    if (!password_verify($oldPassword, $row['password'])) {
         $errors .= "Грешна парола.\n";
     } else if ($password !== $repeatPassword) {
         $errors .= "Повторената парола не съвпада.\n";
     } else if (!preg_match('/^.{8,}$/', $password)) {
-        $errors -= "Паролата трябва да има поне 8 символа.\n";
+        $errors .= "Паролата трябва да има поне 8 символа.\n";
     }
 }
 

@@ -16,34 +16,34 @@ include("../templates/top.php");
 <link rel="stylesheet" href="profile_style.css">
 
 <form id="profile-form" name="profile-form" method="POST" action="update.php" enctype="multipart/form-data">
+    <img src="<?php echo $user["picture"] ?>" alt="Missing image" />
     <div class="group">
-        <img src="<?php echo $user["picture"] ?>" alt="Missing image" />
         <label for="picture" class="label">Профилно изображение</label>
-        <input type="file" name="picture" id="picture">
+        <input class="field" type="file" name="picture" id="picture">
     </div>
     <div class="group">
         <label for="name" class="label">Име</label>
-        <input type="text" name="name" id="name" value="<?php echo $user["name"] ?>">
+        <input class="field" type="text" name="name" id="name" value="<?php echo $user["name"] ?>">
     </div>
     <div class="group">
         <label for="old-password" class="label">Стара парола</label>
-        <input type="password" name="old-password" id="old-password">
+        <input class="field" type="password" name="old-password" id="old-password">
     </div>
     <div class="group">
         <label for="password" class="label">Нова парола</label>
-        <input type="password" name="password" id="password">
+        <input class="field" type="password" name="password" id="password">
     </div>
     <div class="group">
         <label for="repeat-password" class="label">Повторете новата парола</label>
-        <input type="password" name="repeat-password" id="repeat-password">
+        <input class="field" type="password" name="repeat-password" id="repeat-password">
     </div>
     <div class="group">
         <label for="email" class="label">Email</label>
-        <input type="text" name="email" id="email" value="<?php echo $user["email"] ?>">
+        <input class="field" type="text" name="email" id="email" value="<?php echo $user["email"] ?>">
     </div>
     <div class="group">
         <label for="place" class="label">Местоживеене</label>
-        <input type="text" name="place" id="place" value="<?php echo $user["place"] ?>">
+        <input class="field" type="text" name="place" id="place" value="<?php echo $user["place"] ?>">
     </div>
     <div class="group">
         <label for="faculty" class="label">Факултет</label>
@@ -62,7 +62,9 @@ include("../templates/top.php");
         <div class="field" id="year_graduated"><?php echo $user["year_graduated"] ?></div>
     </div>
     <button type="submit" class="button">Запази</button>
-    <div class="error"><?php if(has_errors()) { echo pop_errors(); } ?></div>
+    <div class="error"><?php if (has_errors()) {
+                            echo pop_errors();
+                        } ?></div>
 </form>
 
 <?php
