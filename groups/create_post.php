@@ -30,7 +30,7 @@
     $content = $_POST['content'];
 
     if(check_for_errors()) {
-        header( 'Location: /groups?id=' . $group_id );
+        header( 'Location: /alumni/groups?id=' . $group_id );
         return;
     }
 
@@ -41,5 +41,5 @@
                             VALUES (?, ?, ?)");
     $stmt->execute([$_POST['group_id'], $user['id'], $_POST['content']]);
 
-    header( 'Location: /groups?id=' . $group_id );
+    header( 'Location: /alumni/groups?id=' . $group_id );
 ?>

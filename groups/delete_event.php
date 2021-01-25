@@ -8,5 +8,5 @@
     $stmt = $conn->prepare("DELETE FROM events WHERE id = ?");
     $stmt->execute([$event_id]);
 
-    header( 'Location: /groups?id=' . $group_id );
+    header( 'Location: /alumni/groups?id=' . $group_id );
 ?>

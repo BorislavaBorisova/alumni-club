@@ -34,7 +34,7 @@
     $user = get_user();
 
     if(check_for_errors()) {
-        header( 'Location: /groups' );
+        header( 'Location: /alumni/groups' );
         return;
     }
 
@@ -54,5 +54,5 @@
             break;
     }
 
-    header( 'Location: /groups' );
+    header( 'Location: /alumni/groups' );
 ?>

@@ -8,5 +8,5 @@
                             VALUES (?, ?, ?, ?, ?)");
     $stmt->execute([$_POST['title'], $_POST['datetime'], $_POST['description'], $group_id, $_POST['user_id']]);
 
-    header( 'Location: /groups?id=' . $group_id );
+    header( 'Location: /alumni/groups?id=' . $group_id );
 ?>
