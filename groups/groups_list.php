@@ -1,11 +1,12 @@
 <?php
     $conn = new_db_connection();
-    $sql = "SELECT id, year, faculty FROM groups";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $groups = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
     $user = get_user();
+
+    $sql = "SELECT id, year, faculty FROM groups WHERE (year IS NULL AND faculty=?) OR (year=? AND faculty=?);";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$user['faculty'], $user['year_graduated'], $user['faculty']]);
+    $groups = $stmt->fetchALL(PDO::FETCH_ASSOC);
 ?>
 
 <link rel="stylesheet" href="/alumni/groups/group_list_styles.css">
