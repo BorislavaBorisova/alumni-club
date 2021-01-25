@@ -1,3 +1,3 @@
 <?php
-    header( 'Location: login/login_page.php' );
+    header( 'Location: /alumni/login/login_page.php' );
 ?>
