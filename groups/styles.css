@@ -28,11 +28,12 @@
 }
 
 .submit {
-  background-color: lightgray;
+  background-color: #181245;
+  color: white;
 }
 
 .submit:hover {
-  background-color: darkgray;
+  background-color: #090622;
 }
 
 #posts {

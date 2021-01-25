@@ -6,9 +6,11 @@
   width: 48%;
   display: inline-block;
   height: 40px;
-  background-color: lightgray;
+  background-color: #181245;
+  color: white;
+  border-radius: 15px;
 }
 
 .create-group .submit:hover {
-  background-color: darkgray;
+  background-color: #090622;
 }
