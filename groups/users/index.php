@@ -27,11 +27,11 @@
     $users = $stmt->fetchALL(PDO::FETCH_ASSOC);
 ?>
 
-<link rel="stylesheet" href="/groups/users/styles.css">
+<link rel="stylesheet" href="/alumni/groups/users/styles.css">
 
 <h1>Потребители в група <?php echo($group_id); ?></h1>
 
-<a id="group-link" href="<?php echo("/groups?id=" . $group_id);?>">Назад към групата</a>
+<a id="group-link" href="<?php echo("/alumni/groups?id=" . $group_id);?>">Назад към групата</a>
 
 <div id="users">
     <?php foreach($users as $user): ?>

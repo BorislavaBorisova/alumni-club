@@ -27,7 +27,7 @@
     $group_id = $_POST['group_id'];
 
     if(check_for_errors()) {
-        header( 'Location: /groups?id=' . $group_id );
+        header( 'Location: /alumni/groups?id=' . $group_id );
         return;
     }
 

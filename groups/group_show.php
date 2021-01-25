@@ -1,4 +1,34 @@
 <?php
+    function check_for_errors() {
+        $user = get_user();
+        $group_id = $_GET['id'];
+
+        $conn = new_db_connection();
+        $stmt = $conn->prepare("SELECT year, faculty FROM groups WHERE id = ?;");
+        $stmt->execute([$group_id]);
+        $group = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if(isset($group['year'])) {
+            if($user['faculty'] != $group['faculty'] || $user['year_graduated'] != $group['year']) {
+                set_errors(Array("Не можеш да достъпваш тази група!"));
+                return true;
+            }
+        }
+        else {
+            if($user['faculty'] != $group['faculty']) {
+                set_errors(Array("Не можеш да достъпваш тази група!"));
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
+    if(check_for_errors()) {
+        header( 'Location: /alumni/groups' );
+        return;
+    }
+
     $group_id = $_GET['id'];
     $conn = new_db_connection();
 
@@ -38,7 +68,7 @@
     ?>
 </h1>
 
-<a id="group-users-link" href="<?php echo("/groups/users?id=" . $group_id);?>">Виж кой е в тази група</a>
+<a id="group-users-link" href="<?php echo("/alumni/groups/users?id=" . $group_id);?>">Виж кой е в тази група</a>
 
 <?php include("../templates/errors.php"); ?>
 
@@ -54,7 +84,7 @@
             </div>
             <?php if($group['admin_id'] == $user['id'] || $post['user_id'] == $user['id']): ?>
                 <div class='admin-controls'>
-                    <form action="/groups/delete_post.php" method="post">
+                    <form action="/alumni/groups/delete_post.php" method="post">
                         <input type="hidden" name="post_id" value="<?php echo($post['id']); ?>"/>
                         <input type="hidden" name="group_id" value="<?php echo($group['id']); ?>"/>
                         <input type="submit" value="Изтрий" />
@@ -65,7 +95,7 @@
     <?php endforeach; ?>
 
     <div>
-        <form action="/groups/create_post.php" method="post" id="create-post">
+        <form action="/alumni/groups/create_post.php" method="post" id="create-post">
             <textarea name="content" class="content"></textarea>
             <input type="hidden" name="group_id" value="<?php echo($group_id) ?>"></input>
             <input type="submit" value="Създай" class="submit"></input>
@@ -93,7 +123,7 @@
 
                 <?php if($group['admin_id'] == $user['id'] || $event['user_id'] == $user['id']): ?>
                     <div class='admin-controls'>
-                        <form action="/groups/delete_event.php" method="post">
+                        <form action="/alumni/groups/delete_event.php" method="post">
                             <input type="hidden" name="event_id" value="<?php echo($event['id']); ?>"/>
                             <input type="hidden" name="group_id" value="<?php echo($group['id']); ?>"/>
                             <input type="submit" value="Изтрий" />
@@ -106,7 +136,7 @@
 
     <div id="create-event">
         <h3>Създай събитие</h3>
-        <form action="/groups/create_event.php" method="post">
+        <form action="/alumni/groups/create_event.php" method="post">
             <input type="hidden" name="group_id" value="<?php echo($group_id) ?>"></input>
             <input type="hidden" name="user_id" value="<?php echo($user['id']) ?>"></input>
             <div>
