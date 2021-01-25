@@ -10,7 +10,7 @@
     <body>
         <div id="navigation">
             <a href="/alumni/groups">Групи</a>
-            <a href="/alumni/user_profile.php">Профил</a>
+            <a href="/alumni/user/profile.php">Профил</a>
             <a href="/alumni/announcements/announcements_page.php">Обяви</a>
             <?php
                 if(session_status() != PHP_SESSION_ACTIVE) session_start();
