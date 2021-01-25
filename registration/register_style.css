@@ -1,0 +1,35 @@
+body {
+    font-family: 'Rubik'; 
+    background-color: #ffdc9e;
+}
+
+.create_users_wrap {
+    background-color: rgba(156, 12, 12);
+    width: 370px;
+    margin: 30px 40px;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.button {
+    background-color: #121945;
+	width: 70px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #fff;
+	border-radius: 8px;
+	border: #121945 1px solid;
+	font-family: 'Rubik';
+}
+
+.button:hover{
+	background:#181245; 
+}
+
+form {
+    margin-bottom: 0;
+}
+
+.message {
+    color: #121945;
+}

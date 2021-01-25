@@ -1,127 +1,78 @@
 body{
-	margin:0;
-	color:rgba(255, 255, 255, 0.699);
+	font-family: 'Rubik';
 	background:#ffdc9e;
-	font:600 16px/18px 'Rubik';
+	margin: 0 auto 0 auto;  
+	width:100%; 
+	text-align:center;
+	margin: 20px 0px 20px 0px;
+	padding-top: 10%; 
+	color:#fff;  
 }
-*,:after,:before{box-sizing:border-box}
-.clearfix:after,.clearfix:before{content:'';display:table}
-.clearfix:after{clear:both;display:block}
-a{color:inherit;text-decoration:none}
 
-.login-wrap{
-  width:100%;
-  margin:auto;
-  margin-top: 3.8%;
-  max-width:500px;
-  height: 550px;
-  /* min-height:670px;
-  max-height: 500px; */
-	position:relative;
-	background:url(https://m.netinfo.bg/media/images/32170/32170625/991-ratio-sofijski-universitet.jpg) no-repeat center;
-	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-}
-.login-html{
-	width:100%;
-	height:100%;
-	position:absolute;
-	padding:90px 70px 50px 70px;
-	background:rgba(156, 12, 12,.85);
-}
-.login-html .sign-in-htm,
-.login-html .sign-up-htm{
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
-	position:absolute;
-	transform:rotateY(180deg);
-	backface-visibility:hidden;
-	transition:all .4s linear;
-}
-.login-html .sign-in,
-.login-html .sign-up,
-.login-form .group .check{
-	display:none;
-}
-.login-html .tab,
-.login-form .group .label,
-.login-form .group .button{
-    text-transform:uppercase;
-    font-family: "Rubik" !important;
-}
-.login-html .tab{
-	font-size:22px;
-	margin-right:15px;
-	padding-bottom:5px;
-	margin:0 15px 10px 0;
-	display:inline-block;
-	border-bottom:2px solid transparent;
-}
-.login-html .sign-in:checked + .tab,
-.login-html .sign-up:checked + .tab{
-	color:#fff;
-	border-color:#590404;
-}
-.login-form{
-	min-height:345px;
-	position:relative;
-	perspective:1000px;
-	transform-style:preserve-3d;
-}
-.login-form .group{
-	margin-bottom:15px;
-}
-.login-form .group .label,
-.login-form .group .input,
-.login-form .group .button{
-	width:100%;
-	color:#fff;
-	display:block;
-}
-.login-form .group .input,
-.login-form .group .button{
-	border:none;
-	padding:15px 20px;
-	border-radius:25px;
-	background:rgba(255,255,255,.1);
-}
-.login-form .group input[data-type="password"]{
-	text-security:circle;
-	-webkit-text-security:circle;
-}
-.login-form .group .label{
-	color:#fff;
+p a{
 	font-size:12px;
-}
-.login-form .group .button{
-	background:#121945;
-}
-.login-form .group label .icon{
-	width:15px;
-	height:15px;
-	border-radius:2px;
-	position:relative;
-	display:inline-block;
-	background:rgba(255,255,255,.1);
-}
-
-.login-form .group .check:checked + label{
+	text-decoration: none;
 	color:#fff;
 }
-.login-form .group .check:checked + label .icon{
+
+p {
+	text-align: center;
+}
+
+h1{
+	font-size:1.5em;
+	color:#fff;
+	text-align: left;
+	margin-left: 30px;
+}
+
+.box{
+	background:rgba(156, 12, 12);
+	width: 300px;
+	height: 250px;
+	margin: 0 auto 0 213px;
+	padding:30px 0px 40px 0px;
+}
+
+#picture {
+	margin-right: 213px;
+	background:url(https://m.mirela.bg/dynamic/i/articles/php/135/135/3_2.jpg) no-repeat right;
+}
+
+.email, .password{
+	background: rgba(255, 255, 255, 0.2);
+	padding: 8px;
+	width:250px;
+	font-family: 'Rubik';
+	color:#121945;
+	margin-top:10px;
+	font-size:1em;
+	border-radius:18px;
+	border: rgba(255, 255, 255, 0.2) 1px  solid;
+}
+
+::placeholder {
+	color: #121945;
+}
+
+.button{
 	background:#121945;
+	width:250px;
+	padding-top:5px;
+	padding-bottom:5px;
+	color:#fff;
+	border-radius:20px;
+	border: 1px solid;
+	border-color: #121945;
+	font-family: 'Rubik';
+
+	margin-top:20px;
+	margin-bottom:10px;
+	float:left;
+	margin-left:25px;
+	font-size:0.8em;
 }
 
-.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
-	transform:rotate(0);
-}
-
-.hr{
-	height:2px;
-	margin:60px 0 50px 0;
-	background:rgba(255,255,255,.2);
-}
-.foot-lnk{
-	text-align:right;
+.button:hover{
+	background: #181245; 
 }

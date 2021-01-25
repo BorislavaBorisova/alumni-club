@@ -14,7 +14,7 @@
     $stmt->execute([$data['email']]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
             
-    if(password_verify($data['password'], $row['password']) == true){                                      
+    if(isset($row['password']) && password_verify($data['password'], $row['password']) === true){                                      
         $_SESSION['logged'] = true;
         $_SESSION['id'] = $row['id'];
         $_SESSION['email'] = $row['email'];  
@@ -27,13 +27,5 @@
         session_destroy();
         echo json_encode(array("success"=>$success, "error_message"=>$error_message));
     }
-
-    // if($row['security_level'] == "user"){
-    //     header( 'Location: http://localhost/ex2-formSQL/electives_form.php' ) ;
-    //     exit;
-    // } else {
-    //     header( 'Location: http://localhost/ex2-formSQL/homepage.php' ) ;
-    //     exit;
-    // }
 ?>
 

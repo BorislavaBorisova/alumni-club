@@ -9,8 +9,9 @@
     </head>
     <body>
         <div id="navigation">
-            <a href="/groups">Групи</a>
-            <a href="/user_profile.php">Профил</a>
-            <a href="/login/login_page.php">Влизане</a>
+            <a href="/alumni/groups">Групи</a>
+            <a href="/alumni/user_profile.php">Профил</a>
+            <a href="/alumni/login/login_page.php">Влизане</a>
+            <a href="/alumni/logout/logout.php">Изход</a>
         </div>
         <div id='container'>
