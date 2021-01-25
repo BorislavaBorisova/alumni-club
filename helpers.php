@@ -20,6 +20,24 @@
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    function get_user_by_id($id) {
+        safe_session_start();
+
+        $conn = new_db_connection();
+        $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function get_user_by_email($email) {
+        safe_session_start();
+
+        $conn = new_db_connection();
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     // Used for debugging purposes mostly
     function set_user($id) {
         safe_session_start();
@@ -49,5 +67,10 @@
         $errors = $_SESSION['errors'];
         $_SESSION['errors'] = null;
         return $errors;
+    }
+
+    function prepare_string_for_print($str) {
+        if(preg_match('/^.+$/', $str)) return $str;
+        return "-";
     }
 ?>
