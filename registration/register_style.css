@@ -6,9 +6,10 @@ body {
 .create_users_wrap {
     background-color: rgba(156, 12, 12);
     width: 370px;
-    margin: 30px 40px;
+    /* margin: 30px 40px; */
     padding: 30px;
-    border-radius: 8px;
+    display: block;
+    margin: 100px auto;
 }
 
 .button {
@@ -32,4 +33,14 @@ form {
 
 .message {
     color: #121945;
+}
+
+h1{
+	font-size:1.5em;
+	color:#fff;
+	text-align: left;
+}
+
+.description {
+    color:#fff;
 }

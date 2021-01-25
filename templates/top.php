@@ -12,6 +12,11 @@
             <a href="/alumni/groups">Групи</a>
             <a href="/alumni/user_profile.php">Профил</a>
             <a href="/alumni/login/login_page.php">Влизане</a>
+            <?php
+                if(isset($_SESSION['security_level']) && $_SESSION['security_level'] === "admin"){
+                    echo "<a href=\"/alumni/registration/register_page.php\">Добави алумни</a>";
+                }
+            ?>
             <a href="/alumni/logout/logout.php">Изход</a>
         </div>
         <div id='container'>

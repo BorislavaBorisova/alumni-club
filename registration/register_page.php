@@ -11,6 +11,8 @@
 
 <div class="create_users_wrap">
     <form action="register_users.php" method="post" enctype="multipart/form-data">
+        <h1>Добавяне на нови алумни</h1>
+        <p class="description">Качете .csv файл с информацията на алумните, които искате да регистрате.</p>
         <input type="file" id="file" name="file">
         <button type="submit" class="button">Създай</button>
     </form>    
