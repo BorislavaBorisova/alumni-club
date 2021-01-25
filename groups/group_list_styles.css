@@ -9,8 +9,9 @@
   background-color: #181245;
   color: white;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .create-group .submit:hover {
-  background-color: #090622;
+  background-color: darkgray;
 }

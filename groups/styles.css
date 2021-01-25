@@ -30,10 +30,11 @@
 .submit {
   background-color: #181245;
   color: white;
+  cursor: pointer;
 }
 
 .submit:hover {
-  background-color: #090622;
+  background-color: darkgray;
 }
 
 #posts {
