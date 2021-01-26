@@ -19,5 +19,9 @@
                 }
             ?>
             <a href="/alumni/logout/logout.php">Изход</a>
+            <form id="search" method="get" action="/alumni/user/show.php">
+                <input type="text" name="email" class="input" id="search-email" placeholder="Търси потребител по имейл"/>
+                <input type="submit" id="search_button" value="Търси"/>
+            </form>
         </div>
         <div id='container'>
