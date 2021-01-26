@@ -24,7 +24,7 @@
             <input type="email" name="email" class="email" id="email" placeholder="Имейл"/>
             <input type="password" name="password" class="password" id="password" placeholder="Парола"/>   
             <input type="submit" class="button" value="Вход"/>
-            <p><a href="">Забравена парола</a></p> 
+            <p><a href="/alumni/login/forgotten_password.php">Забравена парола</a></p> 
             <div id="error_message"></div>
         </div>
     </form>
