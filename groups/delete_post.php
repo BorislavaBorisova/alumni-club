@@ -35,5 +35,5 @@
     $stmt = $conn->prepare("DELETE FROM posts WHERE id = ?");
     $stmt->execute([$post_id]);
 
-    header( 'Location: /groups?id=' . $group_id );
+    header( 'Location: /alumni/groups?id=' . $group_id );
 ?>
