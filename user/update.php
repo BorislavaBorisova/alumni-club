@@ -24,6 +24,7 @@ $repeatPassword = $_POST["repeat-password"];
 $email = $_POST["email"];
 $place = $_POST["place"];
 
+$change_password = 1;
 if (isset($password) && $password !== "") {
     if (!password_verify($oldPassword, $row['password'])) {
         $errors .= "Грешна парола.\n";
@@ -32,6 +33,9 @@ if (isset($password) && $password !== "") {
     } else if (!preg_match('/^.{8,}$/', $password)) {
         $errors .= "Паролата трябва да има поне 8 символа.\n";
     }
+} else {
+    $change_password = 0;
+    $password = $row['password'];
 }
 
 if ($errors !== "") {
@@ -49,7 +53,7 @@ if ($errors !== "") {
     SET name = ?, password = ?, email = ?, place = ?, picture = ?
     WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$name, password_hash($password, PASSWORD_DEFAULT), $email, $place, $base64, $_SESSION["id"]]);
+    $stmt->execute([$name, $change_password === 1 ? password_hash($password, PASSWORD_DEFAULT) : $password, $email, $place, $base64, $_SESSION["id"]]);
 }
 
 header('Location: /alumni/user/profile.php');
