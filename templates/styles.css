@@ -53,3 +53,32 @@ h3 {
 .float-clear {
   clear: both;
 }
+
+#search-email {
+  background: rgba(255, 255, 255, 0.2);
+  width: 25%;
+	padding: 8px;
+	font-family: 'Rubik';
+	color:#fff;
+  margin-top:10px;
+  margin-right: 5px;
+	font-size:1em;
+	border-radius:18px;
+	border: rgba(255, 255, 255, 0.2) 1px  solid;
+}
+
+#search_button {
+  background-color: #9c0c0c;
+	width: 8%;
+	padding: 11px;
+	color: #fff;
+	border-radius: 20px;
+	border: #9c0c0c 1px solid;
+	font-family: 'Rubik';
+}
+
+#search {
+  display: inline;
+  margin-left: 20%;
+  margin-bottom: 1%;
+}
