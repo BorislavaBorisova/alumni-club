@@ -1,7 +1,12 @@
 <?php
     function new_db_connection() {
         include('config.php');
-        return new PDO('mysql:host=localhost;dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
+        return new PDO('mysql:host=' . $db_host . ';port=' . $db_port . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
+    }
+
+    function new_db_connection_without_table() {
+        include('config.php');
+        return new PDO('mysql:host=' . $db_host . ';port=' . $db_port, $db_user, $db_pass);
     }
 
     // Start session only if one isn't started yet
