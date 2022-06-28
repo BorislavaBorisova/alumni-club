@@ -58,7 +58,7 @@
             if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
                 echo "<p class='message'> Файлът ".htmlspecialchars( basename( $_FILES["file"]["name"]))." е успешно качен. </p>";
             } else {
-                echo "<p class='message'> Грешка прикачване на файла. Опитайте отново по-късно. </p>";
+                echo "<p class='message'> Грешка при качване на файла. Опитайте отново по-късно. </p>";
             }
         }
     }
