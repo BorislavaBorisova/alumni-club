@@ -20,7 +20,7 @@
     }
     
     if (tableExists(new_db_connection_without_table(), $db_name) === FALSE) {
-        $sql = file_get_contents('.\81637_81621_81714_init_db.sql');
+        $sql = file_get_contents(__DIR__ . '/81637_81621_81714_init_db.sql');
         new_db_connection_without_table()->exec($sql);
     }
 
