@@ -5,7 +5,7 @@ function successfulLogIn(event){
     var password = document.getElementById("password").value;
     $.ajax({
             type : "POST",
-            url  : "http://localhost/alumni/login/login.php",
+            url  : "http://" + window.location.host + "/alumni/login/login.php",
             "Content-Type" : "application/json",
             data : JSON.stringify({ "email" : email, "password" : password }),
             success: function(res){  
@@ -14,7 +14,7 @@ function successfulLogIn(event){
                             document.getElementById("error_message").innerHTML = response.error_message;
                             return false;
                         } else {
-                            window.location.href = "http://localhost/alumni/user/profile.php";
+                            window.location.href = "http://" + window.location.host + "/alumni/user/profile.php";
                             return true;
                         }
                     }
